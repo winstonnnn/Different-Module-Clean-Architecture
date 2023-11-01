@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.games.snake.SnakeGameActivity">
+
+    <data>
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/container_controls">
+            <View
+                android:id="@+id/snake"
+                android:layout_width="100dp"
+                android:layout_height="8dp"
+                android:background="#08B0FC"/>
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_controls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <ImageView
+                android:id="@+id/control_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/control_up"
+                app:layout_constraintStart_toEndOf="@id/control_left"
+                app:layout_constraintBottom_toTopOf="@id/control_left"/>
+
+            <ImageView
+                android:id="@+id/control_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/control_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/control_down"/>
+
+            <ImageView
+                android:id="@+id/control_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/control_center"
+                app:layout_constraintStart_toEndOf="@id/control_left"
+                app:layout_constraintTop_toBottomOf="@id/control_up"
+                app:layout_constraintEnd_toStartOf="@id/control_right"
+                app:layout_constraintBottom_toTopOf="@id/control_down"/>
+
+            <ImageView
+                android:id="@+id/control_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/control_down"
+                app:layout_constraintStart_toEndOf="@id/control_left"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageView
+                android:id="@+id/control_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/control_right"
+                app:layout_constraintStart_toEndOf="@id/control_down"
+                app:layout_constraintBottom_toTopOf="@id/control_down"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnStartPause"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Start"
+            android:layout_margin="15dp"
+            android:backgroundTint="#08B0FC"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
